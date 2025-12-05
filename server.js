@@ -18,12 +18,12 @@ const paintings = JSON.parse(fs.readFileSync("./data/paintings-nested.json"));
 
 // ---------------- PAINTINGS ----------------
 
-// /api/paintings  → all paintings
+// /api/paintings  - all paintings
 app.get("/api/paintings", (req, res) => {
     res.json(paintings);
 });
 
-// /api/painting/:id → single painting by ID
+// /api/painting/:id - single painting by ID
 app.get("/api/painting/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const result = paintings.find(p => p.paintingID === id);
@@ -34,7 +34,7 @@ app.get("/api/painting/:id", (req, res) => {
     res.json(result);
 });
 
-// /api/painting/gallery/:id → paintings from gallery
+// /api/painting/gallery/:id - paintings from gallery
 app.get("/api/painting/gallery/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const result = paintings.filter(p => p.gallery.galleryID === id);
@@ -45,7 +45,7 @@ app.get("/api/painting/gallery/:id", (req, res) => {
     res.json(result);
 });
 
-// /api/painting/artist/:id → paintings from artist
+// /api/painting/artist/:id - paintings from artist
 app.get("/api/painting/artist/:id", (req, res) => {
     const id = parseInt(req.params.id);
     const result = paintings.filter(p => p.artist.artistID === id);
@@ -56,7 +56,7 @@ app.get("/api/painting/artist/:id", (req, res) => {
     res.json(result);
 });
 
-// /api/painting/year/:min/:max → year range
+// /api/painting/year/:min/:max - year range
 app.get("/api/painting/year/:min/:max", (req, res) => {
     const min = parseInt(req.params.min);
     const max = parseInt(req.params.max);
@@ -71,7 +71,7 @@ app.get("/api/painting/year/:min/:max", (req, res) => {
     res.json(result);
 });
 
-// /api/painting/title/:text → title contains text (case insensitive)
+// /api/painting/title/:text - title contains text (case insensitive)
 app.get("/api/painting/title/:text", (req, res) => {
     const text = req.params.text.toLowerCase();
 
@@ -85,7 +85,7 @@ app.get("/api/painting/title/:text", (req, res) => {
     res.json(result);
 });
 
-// /api/painting/color/:name → dominant color name match
+// /api/painting/color/:name - dominant color name match
 app.get("/api/painting/color/:name", (req, res) => {
     const colorName = req.params.name.toLowerCase();
 
@@ -103,12 +103,12 @@ app.get("/api/painting/color/:name", (req, res) => {
 
 // ---------------- ARTISTS ----------------
 
-// /api/artists → all artists
+// /api/artists - all artists
 app.get("/api/artists", (req, res) => {
     res.json(artists);
 });
 
-// /api/artists/:country → filter by nationality (case insensitive)
+// /api/artists/:country - filter by nationality (case insensitive)
 app.get("/api/artists/:country", (req, res) => {
     const search = req.params.country.toLowerCase();
 
@@ -124,12 +124,12 @@ app.get("/api/artists/:country", (req, res) => {
 
 // ---------------- GALLERIES ----------------
 
-// /api/galleries → all galleries
+// /api/galleries - all galleries
 app.get("/api/galleries", (req, res) => {
     res.json(galleries);
 });
 
-// /api/galleries/:country → filter galleries by country
+// /api/galleries/:country - filter galleries by country
 app.get("/api/galleries/:country", (req, res) => {
     const search = req.params.country.toLowerCase();
     const result = galleries.filter(g =>
