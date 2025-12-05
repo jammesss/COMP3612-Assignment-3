@@ -1,0 +1,21 @@
+{
+  "name": "comp3612-assignment-3",
+  "version": "1.0.0",
+  "description": "**Please view `COMP3612 Assignment 3.pdf` for instructions**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jammesss/COMP3612-Assignment-3.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jammesss/COMP3612-Assignment-3/issues"
+  },
+  "homepage": "https://github.com/jammesss/COMP3612-Assignment-3#readme"
+}
